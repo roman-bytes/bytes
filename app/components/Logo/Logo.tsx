@@ -1,6 +1,6 @@
 export default function Logo() {
     return (
-        <svg className="mx-auto h-13 w-auto" viewBox="0 0 308 242" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="mx-auto h-16 w-auto" viewBox="0 0 308 242" fill="none" xmlns="http://www.w3.org/2000/svg">
             <title>Roman Bytes Logo</title>
             <path fillRule="evenodd" clipRule="evenodd" d="M140.468 35.0368H167.626L162.036 56.5128H146.209L140.468 35.0368Z" fill="#BF860F" />
             <path fillRule="evenodd" clipRule="evenodd" d="M146.525 59.314H162.024L159.968 68.1379C159.968 68.1379 202.512 75.8223 206.719 116.798C207.807 122.849 204.946 122.29 202.497 118.867C190.305 105.408 180.35 91.7168 153.997 85.015C127.98 91.1803 105.096 118.867 105.096 118.867C105.096 118.867 101.137 123.503 101.137 115.986C101.137 108.47 108.713 73.1559 147.747 68.1379C147.093 61.9152 146.525 59.314 146.525 59.314Z" fill="#BF860F" />

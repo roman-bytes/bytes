@@ -16,8 +16,7 @@ export const action: ActionFunction = async ({ request}) => {
 
 export default function Generate() {
     const data = useActionData();
-    console.log('data', data)
-  return (
+    return (
       <Layout>
           <Header />
           <Card>
@@ -46,7 +45,7 @@ export default function Generate() {
                       Byte Size Me!
                   </button>
               </form>
-              {data.shortUrl && (
+              {data?.shortUrl && (
                   <>
                       <div className="relative mt-6">
                           <div className="absolute inset-0 flex items-center">
@@ -57,11 +56,11 @@ export default function Generate() {
                           </div>
                       </div>
                       <div>
-                          {data.shortUrl}
+                          {data?.shortUrl}
                       </div>
                   </>
               )}
           </Card>
       </Layout>
-  );
+    );
 }
