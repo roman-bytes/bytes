@@ -3,12 +3,13 @@ import {
   Links,
   LiveReload,
   Meta,
-  Outlet,
+  Outlet, redirect,
   Scripts,
   ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
 import styles from "./styles/tailwind.css";
+import {createLink} from "~/services/api";
 
 export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
@@ -18,11 +19,8 @@ export function links() {
   return [{ rel: "stylesheet", href: styles }]
 }
 
-export const action: ActionFunction = async ({}) => {
-  console.log('this')
-
-
-  return 'OK';
+export const action: ActionFunction = async ({ request}) => {
+  return redirect('/')
 }
 
 export default function App() {
@@ -34,7 +32,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body class="bg-romanBlack">
+      <body className="bg-romanBlack">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
