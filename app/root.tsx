@@ -8,25 +8,19 @@ import {
   ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
+import styles from "./styles/tailwind.css";
 
 export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
 };
 
+export function links() {
+  return [{ rel: "stylesheet", href: styles }]
+}
+
 export const action: ActionFunction = async ({}) => {
   console.log('this')
-  const link = await fetch("https://bytes-url-api-379t3p9vm-roman-ii.vercel.app/api/link", {
-    method: 'post',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      url: "https://www.google.com/search?q=url+shortener&oq=google+u&aqs=chrome.0.69i59j69i60l3j0j69i57.1069j0j7&sourceid=chrome&ie=UTF-8",
-      shortUrl: "http://localhost:3001/bytes-1sasd124"
-    })
-  }).then(res => res.json());
-  console.log('LINK', link)
+
 
   return 'OK';
 }
@@ -40,7 +34,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body class="bg-romanBlack">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
