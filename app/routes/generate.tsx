@@ -14,8 +14,9 @@ export const action: ActionFunction = async ({ request}) => {
     return link;
 }
 
-export default function Index() {
+export default function Generate() {
     const data = useActionData();
+    console.log('data', data)
   return (
       <Layout>
           <Header />
@@ -23,7 +24,7 @@ export default function Index() {
               <h3 className="text-sm text-gray-500">URL to long? Generate a small one thats easy to share.</h3>
               <form method="post" action="/generate">
                   <div className="my-2">
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-900">
+                      <label htmlFor="url" className="block text-sm font-medium text-gray-900">
                           URL
                       </label>
                       <div className="mt-1">
@@ -45,7 +46,7 @@ export default function Index() {
                       Byte Size Me!
                   </button>
               </form>
-              {data && (
+              {data.shortUrl && (
                   <>
                       <div className="relative mt-6">
                           <div className="absolute inset-0 flex items-center">

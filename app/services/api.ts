@@ -1,6 +1,6 @@
 import randomstring from 'randomstring';
 
-export async function createLink(longUrl) {
+export async function createLink(longUrl: string) {
     return await fetch("https://bytes-url-api-379t3p9vm-roman-ii.vercel.app/api/link", {
         method: 'post',
         headers: {
@@ -14,10 +14,19 @@ export async function createLink(longUrl) {
     }).then(res => res.json());
 }
 
-export async function getRedirect(path) {
+type URL = {
+    id: string;
+    createdAt: string;
+    updatedAt: string;
+    url: string;
+    shortUrl: string;
+    userId: string;
+}
+
+export async function getRedirect(path: string) {
     const urls = await fetch(`https://bytes-url-api-379t3p9vm-roman-ii.vercel.app/api/link`, {
         method: 'get'
     }).then(res => res.json());
-    const url = urls.filter(url => url.shortUrl === path);
+    const url = urls.filter((url: URL) => url.shortUrl === path);
     return url[0].url;
 }
